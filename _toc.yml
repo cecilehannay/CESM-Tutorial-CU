@@ -10,6 +10,7 @@ parts:
   - file: notebooks/01.Prerequisites/title.ipynb
     sections:
     - file: notebooks/01.Prerequisites/login_and_project.ipynb
+    - file: notebooks/01.Prerequisites/unix.ipynb
 
   - file: notebooks/02.Overview-CESM/title.ipynb
     sections:
