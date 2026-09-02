@@ -1,4 +1,4 @@
-# [Running CESM on Derecho Tutorial](https://ncar.github.io/CESM-Tutorial-CU/README.html)
+# [Running CESM on Derecho Tutorial](https://cecilehannay.github.io/CESM-Tutorial-CU/README.html)
 
 ![CESM logo](images/CESM_logo.png)
 ___

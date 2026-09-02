@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'NCAR/CESM-Tutorial-CU'
+    if: github.repository == 'cecilehannay/CESM-Tutorial-CU'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
