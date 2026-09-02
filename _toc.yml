@@ -14,7 +14,6 @@ parts:
 
   - file: notebooks/02.Overview-CESM/title.ipynb
     sections:
-    - file: notebooks/02.Overview-CESM/why_cesm.ipynb
     - file: notebooks/02.Overview-CESM/navigating_maze.ipynb
 
   - file: notebooks/03.Downloading-CESM-Code/title.ipynb
@@ -68,5 +67,6 @@ parts:
   chapters:
   - file: notebooks/11.Additional-Materials/title.ipynb
     sections:
+    - file: notebooks/02.Overview-CESM/why_cesm.ipynb
     - file: notebooks/11.Additional-Materials/quick_plot.ipynb
     - file: notebooks/07.Namelist/more_exercises.ipynb
