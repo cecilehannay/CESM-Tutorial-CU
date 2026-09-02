@@ -6,6 +6,18 @@ ___
 ## Instructor
 Cécile Hannay, CGD/NCAR (hannay@ucar.edu)
 
+## By the end of today, you'll be able to...
+
+- Explain why you'd use CESM, and find your way around its 5 key directories (code,
+  inputdata, case, build/run, archive).
+- Download the CESM code and run a simulation using just 4 commands.
+- Change the length of a run, and extend/resubmit a run to continue it.
+- Find and interpret your output, log, and timing files — including what to check first
+  when a run crashes.
+- Modify a namelist (e.g., change the CO2 concentration).
+- Explain the difference between startup, branch, and hybrid runs, and set one up.
+- Know where to go for help and further learning after today.
+
 ## Purpose
 
 The Community Earth System Model (CESM) version 2 is a state-of-the-art global Earth system
@@ -15,9 +27,6 @@ for Earth system research and education. Read more about the CESM model
 [here](https://www.cesm.ucar.edu/).
 
 This tutorial is intended for new users of CESM2 who want a hands-on introduction to running
-the model on NCAR's Derecho supercomputer. By the end of the tutorial, you will be able to
-download the CESM code, run a simulation with just four commands, change the length of a run,
-find and interpret your output/log/timing files, modify namelists, and understand the
-different CESM run types (startup, branch, hybrid).
+the model on NCAR's Derecho supercomputer.
 
 Enjoy!
