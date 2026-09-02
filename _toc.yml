@@ -9,64 +9,64 @@ parts:
   chapters:
   - file: notebooks/01.Prerequisites/title.ipynb
     sections:
-    - file: notebooks/01.Prerequisites/login_and_project.ipynb
-    - file: notebooks/01.Prerequisites/unix.ipynb
+    - file: notebooks/01.Prerequisites/1.1_login_and_project.ipynb
+    - file: notebooks/01.Prerequisites/1.2_unix.ipynb
 
   - file: notebooks/02.CESM-structure/title.ipynb
     sections:
-    - file: notebooks/02.CESM-structure/navigating_maze.ipynb
+    - file: notebooks/02.CESM-structure/2.1_navigating_maze.ipynb
 
   - file: notebooks/03.Downloading-CESM-Code/title.ipynb
     sections:
-    - file: notebooks/03.Downloading-CESM-Code/download_cesm.ipynb
-    - file: notebooks/03.Downloading-CESM-Code/overview_directories.ipynb
+    - file: notebooks/03.Downloading-CESM-Code/3.1_download_cesm.ipynb
+    - file: notebooks/03.Downloading-CESM-Code/3.2_overview_directories.ipynb
 
   - file: notebooks/04.CESM-Workflow-Quickstart/title.ipynb
     sections:
-    - file: notebooks/04.CESM-Workflow-Quickstart/four_commands.ipynb
-    - file: notebooks/04.CESM-Workflow-Quickstart/compsets_and_grids.ipynb
-    - file: notebooks/04.CESM-Workflow-Quickstart/exercise1.ipynb
+    - file: notebooks/04.CESM-Workflow-Quickstart/4.1_four_commands.ipynb
+    - file: notebooks/04.CESM-Workflow-Quickstart/4.2_compsets_and_grids.ipynb
+    - file: notebooks/04.CESM-Workflow-Quickstart/4.3_exercise1.ipynb
 
   - file: notebooks/05.Run-length/title.ipynb
     sections:
-    - file: notebooks/05.Run-length/xml_files.ipynb
-    - file: notebooks/05.Run-length/restart_files.ipynb
-    - file: notebooks/05.Run-length/exercise2.ipynb
-    - file: notebooks/05.Run-length/homework.ipynb
+    - file: notebooks/05.Run-length/5.1_xml_files.ipynb
+    - file: notebooks/05.Run-length/5.2_restart_files.ipynb
+    - file: notebooks/05.Run-length/5.3_exercise2.ipynb
+    - file: notebooks/05.Run-length/5.4_homework.ipynb
 
   - file: notebooks/06.Output/title.ipynb
     sections:
-    - file: notebooks/06.Output/output_overview.ipynb
-    - file: notebooks/06.Output/exercise3_timing.ipynb
-    - file: notebooks/06.Output/log_and_history_files.ipynb
-    - file: notebooks/06.Output/exercise4_output.ipynb
+    - file: notebooks/06.Output/6.1_output_overview.ipynb
+    - file: notebooks/06.Output/6.2_exercise3_timing.ipynb
+    - file: notebooks/06.Output/6.3_log_and_history_files.ipynb
+    - file: notebooks/06.Output/6.4_exercise4_output.ipynb
 
   - file: notebooks/07.Namelist/title.ipynb
     sections:
-    - file: notebooks/07.Namelist/namelist_overview.ipynb
-    - file: notebooks/07.Namelist/changing_co2.ipynb
-    - file: notebooks/07.Namelist/exercise5_co2.ipynb
-    - file: notebooks/07.Namelist/namelist_documentation.ipynb
+    - file: notebooks/07.Namelist/7.1_namelist_overview.ipynb
+    - file: notebooks/07.Namelist/7.2_changing_co2.ipynb
+    - file: notebooks/07.Namelist/7.3_exercise5_co2.ipynb
+    - file: notebooks/07.Namelist/7.4_namelist_documentation.ipynb
 
   - file: notebooks/08.Runtype/title.ipynb
     sections:
-    - file: notebooks/08.Runtype/overview.ipynb
-    - file: notebooks/08.Runtype/exercise6_hybrid.ipynb
+    - file: notebooks/08.Runtype/8.1_overview.ipynb
+    - file: notebooks/08.Runtype/8.2_exercise6_hybrid.ipynb
 
   - file: notebooks/09.Troubleshooting/title.ipynb
     sections:
-    - file: notebooks/09.Troubleshooting/log_files_and_crashes.ipynb
-    - file: notebooks/09.Troubleshooting/project_code_issues.ipynb
-    - file: notebooks/09.Troubleshooting/getting_help.ipynb
+    - file: notebooks/09.Troubleshooting/9.1_log_files_and_crashes.ipynb
+    - file: notebooks/09.Troubleshooting/9.2_project_code_issues.ipynb
+    - file: notebooks/09.Troubleshooting/9.3_getting_help.ipynb
 
   - file: notebooks/10.Wrap-up/title.ipynb
     sections:
-    - file: notebooks/10.Wrap-up/overview.ipynb
+    - file: notebooks/10.Wrap-up/10.1_overview.ipynb
 
 - caption: Additional materials
   chapters:
   - file: notebooks/11.Additional-Materials/title.ipynb
     sections:
-    - file: notebooks/02.CESM-structure/why_cesm.ipynb
-    - file: notebooks/11.Additional-Materials/quick_plot.ipynb
-    - file: notebooks/07.Namelist/more_exercises.ipynb
+    - file: notebooks/11.Additional-Materials/11.1_why_cesm.ipynb
+    - file: notebooks/11.Additional-Materials/11.2_quick_plot.ipynb
+    - file: notebooks/11.Additional-Materials/11.3_more_exercises.ipynb
