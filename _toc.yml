@@ -15,6 +15,7 @@ parts:
   - file: notebooks/02.CESM-structure/title.ipynb
     sections:
     - file: notebooks/02.CESM-structure/2.1_navigating_maze.ipynb
+    - file: notebooks/02.CESM-structure/2.2_exercise0_workspace.ipynb
 
   - file: notebooks/03.Downloading-CESM-Code/title.ipynb
     sections:
