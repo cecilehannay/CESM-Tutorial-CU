@@ -47,7 +47,6 @@ parts:
     - file: notebooks/07.Namelist/changing_co2.ipynb
     - file: notebooks/07.Namelist/exercise5_co2.ipynb
     - file: notebooks/07.Namelist/namelist_documentation.ipynb
-    - file: notebooks/07.Namelist/more_exercises.ipynb
 
   - file: notebooks/08.Runtype/title.ipynb
     sections:
@@ -63,3 +62,10 @@ parts:
   - file: notebooks/10.Wrap-up/title.ipynb
     sections:
     - file: notebooks/10.Wrap-up/overview.ipynb
+
+- caption: Additional materials
+  chapters:
+  - file: notebooks/11.Additional-Materials/title.ipynb
+    sections:
+    - file: notebooks/11.Additional-Materials/quick_plot.ipynb
+    - file: notebooks/07.Namelist/more_exercises.ipynb
