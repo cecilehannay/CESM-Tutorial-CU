@@ -12,9 +12,9 @@ parts:
     - file: notebooks/01.Prerequisites/login_and_project.ipynb
     - file: notebooks/01.Prerequisites/unix.ipynb
 
-  - file: notebooks/02.Overview-CESM/title.ipynb
+  - file: notebooks/02.CESM-structure/title.ipynb
     sections:
-    - file: notebooks/02.Overview-CESM/navigating_maze.ipynb
+    - file: notebooks/02.CESM-structure/navigating_maze.ipynb
 
   - file: notebooks/03.Downloading-CESM-Code/title.ipynb
     sections:
@@ -67,6 +67,6 @@ parts:
   chapters:
   - file: notebooks/11.Additional-Materials/title.ipynb
     sections:
-    - file: notebooks/02.Overview-CESM/why_cesm.ipynb
+    - file: notebooks/02.CESM-structure/why_cesm.ipynb
     - file: notebooks/11.Additional-Materials/quick_plot.ipynb
     - file: notebooks/07.Namelist/more_exercises.ipynb
