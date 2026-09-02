@@ -1,0 +1,43 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Running CESM on Derecho Tutorial
+author: Cécile Hannay, CGD/NCAR
+logo: images/CESM_logo.png
+
+sphinx:
+  config:
+    html_show_copyright: false
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: 'off'
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: tutorial_book.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/NCAR/CESM-Tutorial-CU  # Online location of your book
+  path_to_book: docs  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_repository_button: true
+  use_edit_page_button : false
+  use_issues_button    : true
+  home_page_in_navbar  : true
+  use_multitoc_numbering    : true
+  extra_navbar              : ""
+
+launch_buttons:
+  binder             : false
+  binderhub          : false
+  jupyterhub         : false
+  thebe              : false
+  colab              : false

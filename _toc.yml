@@ -1,0 +1,65 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+
+parts:
+- caption: Tutorial
+  chapters:
+  - file: notebooks/01.Prerequisites/title.ipynb
+    sections:
+    - file: notebooks/01.Prerequisites/login_and_project.ipynb
+
+  - file: notebooks/02.Overview-CESM/title.ipynb
+    sections:
+    - file: notebooks/02.Overview-CESM/why_cesm.ipynb
+    - file: notebooks/02.Overview-CESM/navigating_maze.ipynb
+
+  - file: notebooks/03.Downloading-CESM-Code/title.ipynb
+    sections:
+    - file: notebooks/03.Downloading-CESM-Code/download_cesm.ipynb
+    - file: notebooks/03.Downloading-CESM-Code/overview_directories.ipynb
+
+  - file: notebooks/04.CESM-Workflow-Quickstart/title.ipynb
+    sections:
+    - file: notebooks/04.CESM-Workflow-Quickstart/four_commands.ipynb
+    - file: notebooks/04.CESM-Workflow-Quickstart/compsets_and_grids.ipynb
+    - file: notebooks/04.CESM-Workflow-Quickstart/exercise1.ipynb
+
+  - file: notebooks/05.Run-length/title.ipynb
+    sections:
+    - file: notebooks/05.Run-length/xml_files.ipynb
+    - file: notebooks/05.Run-length/restart_files.ipynb
+    - file: notebooks/05.Run-length/exercise2.ipynb
+    - file: notebooks/05.Run-length/homework.ipynb
+
+  - file: notebooks/06.Output/title.ipynb
+    sections:
+    - file: notebooks/06.Output/output_overview.ipynb
+    - file: notebooks/06.Output/exercise3_timing.ipynb
+    - file: notebooks/06.Output/log_and_history_files.ipynb
+    - file: notebooks/06.Output/exercise4_output.ipynb
+
+  - file: notebooks/07.Namelist/title.ipynb
+    sections:
+    - file: notebooks/07.Namelist/namelist_overview.ipynb
+    - file: notebooks/07.Namelist/changing_co2.ipynb
+    - file: notebooks/07.Namelist/exercise5_co2.ipynb
+    - file: notebooks/07.Namelist/namelist_documentation.ipynb
+    - file: notebooks/07.Namelist/more_exercises.ipynb
+
+  - file: notebooks/08.Runtype/title.ipynb
+    sections:
+    - file: notebooks/08.Runtype/overview.ipynb
+    - file: notebooks/08.Runtype/exercise6_hybrid.ipynb
+
+  - file: notebooks/09.Troubleshooting/title.ipynb
+    sections:
+    - file: notebooks/09.Troubleshooting/log_files_and_crashes.ipynb
+    - file: notebooks/09.Troubleshooting/project_code_issues.ipynb
+    - file: notebooks/09.Troubleshooting/getting_help.ipynb
+
+  - file: notebooks/10.Wrap-up/title.ipynb
+    sections:
+    - file: notebooks/10.Wrap-up/overview.ipynb
