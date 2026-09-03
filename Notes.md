@@ -71,10 +71,14 @@ look at output, and the "why use CESM" aside). Modeled on
   images use `../../images/...` relative paths, not absolute GitHub Pages URLs (one snuck in
   from a manual edit and had to be fixed back to relative — absolute URLs only work once
   already deployed, break local preview builds).
-- Cécile edits notebooks directly in Jupyter herself sometimes — watch for cells accidentally
-  left as `code` type when they should be `markdown` (renders as an unstyled, unhighlighted
-  code block and throws a Sphinx lexer warning at build time — easy to miss by eye, easy to
-  confirm via the build warning).
+- Cécile edits and commits/pushes directly herself too, in parallel with Claude sessions —
+  git history has both (short messages like "unix", "derecho", "cesm maze", "some prereq" are
+  hers; longer descriptive ones are Claude's). Both work in the same checkout, so a file can
+  change on disk between one tool call and the next — treat that as normal, re-read rather
+  than assume staleness. Watch for cells accidentally left as `code` type when they should be
+  `markdown` from manual Jupyter edits (renders as an unstyled, unhighlighted code block and
+  throws a Sphinx lexer warning at build time — easy to miss by eye, easy to confirm via the
+  build warning).
 
 ## Open items / things mentioned but not yet done
 
