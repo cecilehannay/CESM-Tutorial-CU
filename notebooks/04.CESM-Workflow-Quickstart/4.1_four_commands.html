@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The 4 commands to run CESM &#8212; Running CESM on Derecho Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/04.CESM-Workflow-Quickstart/4.1_four_commands';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="More info about compsets and grids" href="4.2_compsets_and_grids.html" />
+    <link rel="prev" title="CESM Workflow: Super Quick Start" href="title.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/CESM_logo.png" class="logo__image only-light" alt="Running CESM on Derecho Tutorial - Home"/>
+    <script>document.write(`<img src="../../_static/CESM_logo.png" class="logo__image only-dark" alt="Running CESM on Derecho Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    Running CESM on Derecho Tutorial
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01.Prerequisites/title.html">Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01.Prerequisites/1.1_login_and_project.html">Getting set up on Derecho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01.Prerequisites/1.2_unix.html">Basic Unix Commands</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02.CESM-structure/title.html">Navigating the CESM maze</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02.CESM-structure/2.1_navigating_maze.html">Understanding the five directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.CESM-structure/2.2_exercise0_workspace.html">Exercise: Prepare your workspace</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03.Downloading-CESM-Code/title.html">Downloading CESM</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03.Downloading-CESM-Code/3.1_download_cesm.html">Exercise: Download CESM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.Downloading-CESM-Code/3.2_overview_directories.html">CESM directories after download</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="title.html">CESM Workflow: Super Quick Start</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05.Run-length/title.html">Change the Length of a Run</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05.Run-length/5.1_xml_files.html">The xml files and run length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.Run-length/5.2_restart_files.html">Restart files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.Run-length/5.3_exercise2.html">Exercise 2: Extend a run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.Run-length/5.4_homework.html">Homework: Extend a run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06.Output/title.html">Output Files, Log Files and Timing Files</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06.Output/6.1_output_overview.html">Where to find output, log and timing files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.Output/6.2_exercise3_timing.html">Exercise 3: Estimate run length and number of submissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.Output/6.3_log_and_history_files.html">Log files and history files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.Output/6.4_exercise4_output.html">Exercise 4: Look at model output</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07.Namelist/title.html">Namelist Modifications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07.Namelist/7.1_namelist_overview.html">CESM namelists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.Namelist/7.2_changing_co2.html">Example: changing namelist variables — setting CO2 concentration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.Namelist/7.3_exercise5_co2.html">Exercise 5: Double the CO2 concentration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.Namelist/7.4_namelist_documentation.html">Where to find info about namelists</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08.Runtype/title.html">Types of Runs: Startup, Branch and Hybrid</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08.Runtype/8.1_overview.html">Run types: Startup, Branch, Hybrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08.Runtype/8.2_exercise6_hybrid.html">Exercise 6: Hybrid run — initializing a run from a previous run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09.Troubleshooting/title.html">Troubleshooting and Log Files</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09.Troubleshooting/9.1_log_files_and_crashes.html">My run crashed — where do I find info?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.Troubleshooting/9.2_project_code_issues.html">Project code issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09.Troubleshooting/9.3_getting_help.html">Where to find help</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10.Wrap-up/title.html">The One-Million Things We Didn’t Cover in This Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10.Wrap-up/10.1_overview.html">Tutorial website and further resources</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional materials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11.Additional-Materials/title.html">Additional Materials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11.Additional-Materials/11.1_why_cesm.html">Why do you want to use CESM?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.Additional-Materials/11.2_quick_plot.html">Quick look at your output with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.Additional-Materials/11.3_more_exercises.html">More resources: additional namelist / SourceMods exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11.Additional-Materials/11.4_glossary.html">Glossary</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cecilehannay/CESM-Tutorial-CU" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cecilehannay/CESM-Tutorial-CU/issues/new?title=Issue%20on%20page%20%2Fnotebooks/04.CESM-Workflow-Quickstart/4.1_four_commands.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/04.CESM-Workflow-Quickstart/4.1_four_commands.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The 4 commands to run CESM</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-creating-a-case">Before creating a case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-the-case">Step 1: Create the case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-set-up-the-case">Step 2: Set up the case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-build-cesm">Step 3: Build CESM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-submit-the-simulation">Step 4: Submit the simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#follow-the-job">Follow the job</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-whether-the-simulation-succeeded">Check whether the simulation succeeded</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-five-directories-are-used">How the five directories are used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The 4 commands to run CESM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-begin">Before you begin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-commands">The four commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-at-each-step">What happens at each step?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-job-queue">Check the job queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-whether-the-run-succeeded">Check whether the run succeeded</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-casestatus">1. Check <code class="docutils literal notranslate"><span class="pre">CaseStatus</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-cesm-log">2. Check the CESM log</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-archive">3. Check the archive</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-are-the-five-directories-now">Where are the five directories now?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">What happens at each step</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-it-is-running">How do I know it is running?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-success-actually-look-like">What does success actually look like?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-view-of-the-cesm-directories-after-the-run-completes">A view of the CESM directories after the run completes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-4-commands-to-run-cesm">
+<h1>The 4 commands to run CESM<a class="headerlink" href="#the-4-commands-to-run-cesm" title="Link to this heading">#</a></h1>
+<p>Running CESM involves four main steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Create</strong> a case.</p></li>
+<li><p><strong>Set up</strong> the case.</p></li>
+<li><p><strong>Build</strong> the CESM executable.</p></li>
+<li><p><strong>Submit</strong> the simulation.</p></li>
+</ol>
+<p>Each commands performs a different task. Understanding these steps will make it much easier to modify your simulations and diagnose problems later.</p>
+<section id="before-creating-a-case">
+<h2>Before creating a case<a class="headerlink" href="#before-creating-a-case" title="Link to this heading">#</a></h2>
+<p>You must make three choices:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Choice</p></th>
+<th class="head"><p>What it means</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Case name</strong></p></td>
+<td><p>The name of your experiment</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Component set</strong> (<code class="docutils literal notranslate"><span class="pre">COMPSET</span></code>)</p></td>
+<td><p>Which model components and experimental conditions CESM will use</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Grid</strong> (<code class="docutils literal notranslate"><span class="pre">GRID</span></code>)</p></td>
+<td><p>The horizontal resolution used by the model components</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The general form of the workflow is shown below.</p>
+<blockquote>
+<div><p><strong>Important:</strong> <code class="docutils literal notranslate"><span class="pre">CASE_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">COMPSET</span></code>, and <code class="docutils literal notranslate"><span class="pre">GRID</span></code> are placeholders. Do not enter them literally. Replace them with the values selected for your experiment.</p>
+</div></blockquote>
+</section>
+<section id="step-1-create-the-case">
+<h2>Step 1: Create the case<a class="headerlink" href="#step-1-create-the-case" title="Link to this heading">#</a></h2>
+<p>Begin in the <code class="docutils literal notranslate"><span class="pre">cime/scripts</span></code> directory of the CESM code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/code/release-cesm2.1.5/cime/scripts
+</pre></div>
+</div>
+<p>The general form of the command is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>./create_newcase \
+    --case ~/cases/CASE_NAME \
+    --compset COMPSET \
+    --res GRID
+</pre></div>
+</div>
+<p>This command creates a new <strong>case directory</strong> containing the configuration for your experiment.</p>
+<p>At this stage, CESM knows:</p>
+<ul class="simple">
+<li><p>The name of the experiment</p></li>
+<li><p>Which model components to use</p></li>
+<li><p>Which grid to use</p></li>
+<li><p>Where the case, build/run, and archive directories will be located</p></li>
+</ul>
+<p>The model has not yet been built or run.</p>
+</section>
+<section id="step-2-set-up-the-case">
+<h2>Step 2: Set up the case<a class="headerlink" href="#step-2-set-up-the-case" title="Link to this heading">#</a></h2>
+<p>Move into the case directory:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd ~/cases/CASE_NAME
+</pre></div>
+</div>
+<p>Then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./case.setup
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">case.setup</span></code> prepares the scripts and configuration files that CESM needs to build and run the experiment.</p>
+<p>The model has still not been compiled or run.</p>
+</section>
+<section id="step-3-build-cesm">
+<h2>Step 3: Build CESM<a class="headerlink" href="#step-3-build-cesm" title="Link to this heading">#</a></h2>
+<p>Build the model executable with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qcmd<span class="w"> </span>--<span class="w"> </span>./case.build
+</pre></div>
+</div>
+<p>Building means compiling the CESM source code into an executable program that Derecho can run.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">qcmd</span></code> command asks Derecho to perform the build on a compute node. Building CESM is computationally intensive and should not be done directly on a login node.</p>
+<p>A successful build produces the CESM executable in the <strong>build directory</strong>.</p>
+<blockquote>
+<div><p>You normally build a case only once. You may need to rebuild it later if you change the source code or certain configuration settings.</p>
+</div></blockquote>
+</section>
+<section id="step-4-submit-the-simulation">
+<h2>Step 4: Submit the simulation<a class="headerlink" href="#step-4-submit-the-simulation" title="Link to this heading">#</a></h2>
+<p>Submit the simulation with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./case.submit
+</pre></div>
+</div>
+<p>This command sends the simulation to Derecho’s PBS batch scheduler.</p>
+<p>The model does not necessarily begin running immediately. It may wait in the queue until the requested computing resources become available.</p>
+<p>When the job starts, CESM runs in the <strong>run directory</strong>.</p>
+</section>
+<section id="follow-the-job">
+<h2>Follow the job<a class="headerlink" href="#follow-the-job" title="Link to this heading">#</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">qstat</span></code> to see whether your job is queued or running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qstat<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>The most common status codes are:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Status</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Q</span></code></p></td>
+<td><p>The job is queued and waiting to run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">R</span></code></p></td>
+<td><p>The job is running.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">H</span></code></p></td>
+<td><p>The job is being held while it waits for another job to finish.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Not listed</p></td>
+<td><p>The job has finished or stopped because of an error.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A job disappearing from <code class="docutils literal notranslate"><span class="pre">qstat</span></code> does not necessarily mean that it succeeded.</p>
+</section>
+<section id="check-whether-the-simulation-succeeded">
+<h2>Check whether the simulation succeeded<a class="headerlink" href="#check-whether-the-simulation-succeeded" title="Link to this heading">#</a></h2>
+<p>CESM records the status of each step in a file named <code class="docutils literal notranslate"><span class="pre">CaseStatus</span></code>, located in the case directory.</p>
+<p>Use:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>tail -20 ~/cases/CASE_NAME/CaseStatus
+</pre></div>
+</div>
+<p>A successful simulation includes:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>case.run success
+</pre></div>
+</div>
+<p>After CESM organizes the output files, you should also see:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>st_archive success
+</pre></div>
+</div>
+<p>If you see <code class="docutils literal notranslate"><span class="pre">case.run</span> <span class="pre">error</span></code>, the simulation crashed. The log files will provide more information about what went wrong.</p>
+</section>
+<section id="how-the-five-directories-are-used">
+<h2>How the five directories are used<a class="headerlink" href="#how-the-five-directories-are-used" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Directory</p></th>
+<th class="head"><p>Role in the workflow</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>CESM code</strong></p></td>
+<td><p>Provides the source code and the <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code> command.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Input data</strong></p></td>
+<td><p>Provides the grids, initial conditions, and forcing data required by the selected case.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Case</strong></p></td>
+<td><p>Is created by <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code> and contains the experiment configuration and commands.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Build/run</strong></p></td>
+<td><p>Is used when CESM is compiled and when the simulation runs.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Archive</strong></p></td>
+<td><p>Receives organized output, restart, and log files after the run.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="The CESM directories after a run completes" src="../../_images/cesm_directories_workflow.png" /></p>
+<p>In the next exercise, you will apply this workflow to create and run a specific CESM case.</p>
+</section>
+<section id="id1">
+<h2>The 4 commands to run CESM<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>In this exercise, you will create, set up, build, and submit your first CESM experiment. A CESM experiment is called a <strong>case</strong>.</p>
+<p>Run all the commands below from a terminal on <strong>Derecho</strong>.</p>
+</section>
+<section id="before-you-begin">
+<h2>Before you begin<a class="headerlink" href="#before-you-begin" title="Link to this heading">#</a></h2>
+<p>This example uses:</p>
+<ul class="simple">
+<li><p><strong>Case name:</strong> <code class="docutils literal notranslate"><span class="pre">case01</span></code></p></li>
+<li><p><strong>Component set:</strong> <code class="docutils literal notranslate"><span class="pre">B1850</span></code>, a coupled preindustrial configuration</p></li>
+<li><p><strong>Resolution:</strong> <code class="docutils literal notranslate"><span class="pre">f19_g17</span></code>, with an atmosphere and land grid of approximately 2° and an ocean and sea-ice grid of approximately 1°</p></li>
+</ul>
+<p>The case name identifies your experiment. If you choose a different name, use it consistently throughout the tutorial.</p>
+<blockquote>
+<div><p><strong>Important:</strong> Each case must have a unique name. If <code class="docutils literal notranslate"><span class="pre">~/cases/case01</span></code> already exists, <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code> will stop rather than overwrite it.</p>
+</div></blockquote>
+</section>
+<section id="the-four-commands">
+<h2>The four commands<a class="headerlink" href="#the-four-commands" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Go to the scripts directory in the CESM code</span>
+<span class="nb">cd</span><span class="w"> </span>~/code/release-cesm2.1.5/cime/scripts
+
+<span class="c1"># 1. Create a new case</span>
+./create_newcase<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--case<span class="w"> </span>~/cases/case01<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--compset<span class="w"> </span>B1850<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--res<span class="w"> </span>f19_g17
+
+<span class="c1"># Move into the new case directory</span>
+<span class="nb">cd</span><span class="w"> </span>~/cases/case01
+
+<span class="c1"># 2. Set up the case</span>
+./case.setup
+
+<span class="c1"># 3. Build the CESM executable</span>
+qcmd<span class="w"> </span>--<span class="w"> </span>./case.build
+
+<span class="c1"># 4. Submit the simulation</span>
+./case.submit
+</pre></div>
+</div>
+<p>The backslashes (<code class="docutils literal notranslate"><span class="pre">\</span></code>) in the <code class="docutils literal notranslate"><span class="pre">create_newcase</span></code> command allow one long command to be displayed on several lines. You can copy and run all four lines together.</p>
+</section>
+<section id="what-happens-at-each-step">
+<h2>What happens at each step?<a class="headerlink" href="#what-happens-at-each-step" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>Command</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1. Create</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">create_newcase</span></code></p></td>
+<td><p>Creates the <strong>case directory</strong> and records your chosen case name, component set, resolution, and Derecho settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2. Set up</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">case.setup</span></code></p></td>
+<td><p>Creates the scripts and configuration files needed to build and run the case.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3. Build</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">case.build</span></code></p></td>
+<td><p>Compiles the CESM source code and creates the model executable. The <code class="docutils literal notranslate"><span class="pre">qcmd</span></code> command runs this computationally intensive step on a Derecho compute node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4. Submit</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">case.submit</span></code></p></td>
+<td><p>Submits the simulation to Derecho’s PBS batch queue. CESM will run when the requested computing resources become available.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">case.submit</span></code> does not run CESM directly in your terminal. It sends the job to Derecho’s scheduler, which decides when the job can begin.</p>
+</section>
+<section id="check-the-job-queue">
+<h2>Check the job queue<a class="headerlink" href="#check-the-job-queue" title="Link to this heading">#</a></h2>
+<p>After submitting the case, check its status with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qstat<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>You may see output similar to this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                                                            Req'd  Req'd   Elap
+Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+6315297.desche* hannay   cpu      run.case01    --    6 768  1410g 12:00 Q   --
+6315298.desche* hannay   cpu      st_archiv*    --    1   1  235gb 00:20 H   --
+</pre></div>
+</div>
+<p>The main jobs are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">run.case01</span></code>: runs the CESM simulation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">st_archive</span></code>: organizes the output after the simulation finishes.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">S</span></code> column shows the job status:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Status</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Q</span></code></p></td>
+<td><p>The job is queued and waiting for resources.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">R</span></code></p></td>
+<td><p>The job is running.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">H</span></code></p></td>
+<td><p>The job is being held. For example, the archive job waits for the simulation to finish.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Not listed</p></td>
+<td><p>The job has finished or stopped because of an error.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A job disappearing from <code class="docutils literal notranslate"><span class="pre">qstat</span></code> does <strong>not</strong> prove that it succeeded. You must check the case status.</p>
+</section>
+<section id="check-whether-the-run-succeeded">
+<h2>Check whether the run succeeded<a class="headerlink" href="#check-whether-the-run-succeeded" title="Link to this heading">#</a></h2>
+<section id="check-casestatus">
+<h3>1. Check <code class="docutils literal notranslate"><span class="pre">CaseStatus</span></code><a class="headerlink" href="#check-casestatus" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">CaseStatus</span></code> file records the major steps completed by CESM:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail<span class="w"> </span>-20<span class="w"> </span>~/cases/case01/CaseStatus
+</pre></div>
+</div>
+<p>A successful run will include lines similar to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2026-09-02 14:32:07: case.submit starting
+---------------------------------------------------
+2026-09-02 14:32:09: case.run starting
+---------------------------------------------------
+2026-09-02 14:44:51: case.run success
+---------------------------------------------------
+2026-09-02 14:45:02: st_archive starting
+---------------------------------------------------
+2026-09-02 14:45:18: st_archive success
+</pre></div>
+</div>
+<p>Look for:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">case.run</span> <span class="pre">success</span></code>: the simulation finished successfully.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">st_archive</span> <span class="pre">success</span></code>: CESM successfully moved and organized the output files.</p></li>
+</ul>
+<p>If you see <code class="docutils literal notranslate"><span class="pre">case.run</span> <span class="pre">error</span></code>, the simulation crashed.</p>
+</section>
+<section id="check-the-cesm-log">
+<h3>2. Check the CESM log<a class="headerlink" href="#check-the-cesm-log" title="Link to this heading">#</a></h3>
+<p>You can also search the main CESM log for a successful-termination message:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zgrep<span class="w"> </span><span class="s2">"SUCCESSFUL TERMINATION"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>~/cases/case01/logs/cesm.log.*.gz
+</pre></div>
+</div>
+<p>A successful run should contain a line similar to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(seq_mct_drv): =============== SUCCESSFUL TERMINATION OF CPL7-cesm ===============
+</pre></div>
+</div>
+<p>If you do not find this message, examine the log files for an error or traceback. The <a class="reference internal" href="../09.Troubleshooting/9.1_log_files_and_crashes.html"><span class="std std-doc">Troubleshooting</span></a> chapter explains what to check when a run crashes.</p>
+</section>
+<section id="check-the-archive">
+<h3>3. Check the archive<a class="headerlink" href="#check-the-archive" title="Link to this heading">#</a></h3>
+<p>After <code class="docutils literal notranslate"><span class="pre">st_archive</span> <span class="pre">success</span></code> appears, list the archive directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>/glade/derecho/scratch/<span class="nv">$USER</span>/archive/case01
+</pre></div>
+</div>
+<p>You should see directories containing model output, restart files, and log files.</p>
+</section>
+</section>
+<section id="where-are-the-five-directories-now">
+<h2>Where are the five directories now?<a class="headerlink" href="#where-are-the-five-directories-now" title="Link to this heading">#</a></h2>
+<p>After the run and archive steps finish:</p>
+<ul class="simple">
+<li><p>The <strong>CESM code directory</strong> still contains the source code.</p></li>
+<li><p>CESM reads the required files from the shared <strong>input data directory</strong>.</p></li>
+<li><p>The <strong>case directory</strong> contains the experiment configuration and commands.</p></li>
+<li><p>The <strong>build/run directory</strong> contains the executable and the files used while CESM runs.</p></li>
+<li><p>The <strong>archive directory</strong> contains the organized output, restart, and log files.</p></li>
+</ul>
+<p><img alt="The CESM directories after a run completes" src="../../_images/cesm_directories_workflow.png" /></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># go into the scripts directory of the CESM code</span>
+<span class="nb">cd</span><span class="w"> </span>~/code/release-cesm2.1.5/cime/scripts
+
+<span class="c1"># (1) create a new case in the "cases" directory in your home directory</span>
+./create_newcase<span class="w"> </span>--case<span class="w"> </span>~/cases/case01<span class="w"> </span>--compset<span class="w"> </span>B1850<span class="w"> </span>--res<span class="w"> </span>f19_g17
+
+<span class="c1"># go into the case you just created</span>
+<span class="nb">cd</span><span class="w"> </span>~/cases/case01/
+
+<span class="c1"># (2) setup your case</span>
+./case.setup
+
+<span class="c1"># (3) build the executable</span>
+qcmd<span class="w"> </span>--<span class="w"> </span>./case.build
+
+<span class="c1"># (4) submit your run</span>
+./case.submit
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>What happens at each step<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>Command</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">create_newcase</span></code></p></td>
+<td><p>Creates the <strong>case directory</strong> and the <strong>build/run directory</strong>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">case.setup</span></code></p></td>
+<td><p>Sets up the case scripts.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">case.build</span></code></p></td>
+<td><p>Compiles the code.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">case.submit</span></code></p></td>
+<td><p>Runs the model (submits the job to the batch queue).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>After the run completes, history files are moved from the run directory to the archive
+directory.</p>
+</section>
+<section id="how-do-i-know-it-is-running">
+<h2>How do I know it is running?<a class="headerlink" href="#how-do-i-know-it-is-running" title="Link to this heading">#</a></h2>
+<p>To check whether your job is running, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qstat<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                                                            Req'd  Req'd   Elap
+Job ID          USERname Queue    Jobname    SessID NDS TSK Memory Time  S Time
+--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+6315297.desche* hannay   cpu      run.case01    --    6 768  1410g 12:00 Q   --
+6315298.desche* hannay   cpu      st_archiv*    --    1   1  235gb 00:20 H   --
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Status <code class="docutils literal notranslate"><span class="pre">Q</span></code>: the job is queued, waiting to run.</p></li>
+<li><p>Status <code class="docutils literal notranslate"><span class="pre">R</span></code>: the job is running.</p></li>
+<li><p>No longer listed: the job is completed — or it crashed. Check the log files (see the
+<a class="reference internal" href="../06.Output/6.1_output_overview.html"><span class="std std-doc">Output</span></a> chapter) to find out which!</p></li>
+</ul>
+</section>
+<section id="what-does-success-actually-look-like">
+<h2>What does success actually look like?<a class="headerlink" href="#what-does-success-actually-look-like" title="Link to this heading">#</a></h2>
+<p>“No longer listed in <code class="docutils literal notranslate"><span class="pre">qstat</span></code>” isn’t proof your run succeeded — it also disappears from the
+queue if it crashed. Two quick, definitive checks:</p>
+<p><strong>1. <code class="docutils literal notranslate"><span class="pre">CASE/CaseStatus</span></code></strong> — a running log of every step, with a pass/fail line for each:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tail<span class="w"> </span>-20<span class="w"> </span>~/cases/case01/CaseStatus
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2026-09-02 14:32:07: case.submit starting
+---------------------------------------------------
+2026-09-02 14:32:09: case.run starting
+---------------------------------------------------
+2026-09-02 14:44:51: case.run success
+---------------------------------------------------
+2026-09-02 14:45:02: st_archive starting
+---------------------------------------------------
+2026-09-02 14:45:18: st_archive success
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">case.run</span> <span class="pre">success</span></code> (not <code class="docutils literal notranslate"><span class="pre">case.run</span> <span class="pre">error</span></code>) is your first confirmation the model actually ran to completion.</p>
+<p><strong>2. The tail of the main log file</strong> in <code class="docutils literal notranslate"><span class="pre">$RUNDIR</span></code> (or <code class="docutils literal notranslate"><span class="pre">CASE/logs</span></code> once archived) — look for the line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zcat<span class="w"> </span>~/cases/case01/logs/cesm.log.*.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-5
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> (seq_mct_drv): =============== SUCCESSFUL TERMINATION OF CPL7-cesm ===============
+ (seq_mct_drv): =============== at YMD,TOD =   00010106       0 ===============
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">SUCCESSFUL</span> <span class="pre">TERMINATION</span></code> is the model itself confirming it finished cleanly. If instead the
+log ends mid-timestep, with a Fortran traceback, or an <code class="docutils literal notranslate"><span class="pre">ERROR:</span></code>/<code class="docutils literal notranslate"><span class="pre">abort</span></code> message, the run
+crashed — see the <a class="reference internal" href="../09.Troubleshooting/9.1_log_files_and_crashes.html"><span class="std std-doc">Troubleshooting</span></a> chapter.</p>
+<p>As a third sanity check, once <code class="docutils literal notranslate"><span class="pre">st_archive</span> <span class="pre">success</span></code> appears, you should see new files under
+your archive directory (e.g., <code class="docutils literal notranslate"><span class="pre">.../archive/case01/rest/</span></code>).</p>
+</section>
+<section id="a-view-of-the-cesm-directories-after-the-run-completes">
+<h2>A view of the CESM directories after the run completes<a class="headerlink" href="#a-view-of-the-cesm-directories-after-the-run-completes" title="Link to this heading">#</a></h2>
+<p><img alt="Overview of CESM directories after the run completes" src="../../_images/cesm_directories_workflow.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/04.CESM-Workflow-Quickstart"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="title.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CESM Workflow: Super Quick Start</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4.2_compsets_and_grids.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">More info about compsets and grids</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-creating-a-case">Before creating a case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-the-case">Step 1: Create the case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-set-up-the-case">Step 2: Set up the case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-build-cesm">Step 3: Build CESM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-submit-the-simulation">Step 4: Submit the simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#follow-the-job">Follow the job</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-whether-the-simulation-succeeded">Check whether the simulation succeeded</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-five-directories-are-used">How the five directories are used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The 4 commands to run CESM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-begin">Before you begin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-commands">The four commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-at-each-step">What happens at each step?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-job-queue">Check the job queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-whether-the-run-succeeded">Check whether the run succeeded</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-casestatus">1. Check <code class="docutils literal notranslate"><span class="pre">CaseStatus</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-cesm-log">2. Check the CESM log</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-archive">3. Check the archive</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-are-the-five-directories-now">Where are the five directories now?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">What happens at each step</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-it-is-running">How do I know it is running?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-success-actually-look-like">What does success actually look like?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-view-of-the-cesm-directories-after-the-run-completes">A view of the CESM directories after the run completes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cécile Hannay, CGD/NCAR
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
