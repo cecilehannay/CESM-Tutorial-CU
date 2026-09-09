@@ -71,3 +71,4 @@ parts:
     - file: notebooks/11.Additional-Materials/11.1_why_cesm.ipynb
     - file: notebooks/11.Additional-Materials/11.2_quick_plot.ipynb
     - file: notebooks/11.Additional-Materials/11.3_more_exercises.ipynb
+    - file: notebooks/11.Additional-Materials/11.4_glossary.ipynb
