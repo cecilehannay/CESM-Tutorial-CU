@@ -14,6 +14,18 @@ sphinx:
     html_js_files:
       - custom.js
 
+# Only build pages listed in _toc.yml (keeps Notes.md / STYLE.md out of the site)
+only_build_toc_files: true
+
+# MyST syntax extensions used in the notebooks (colon-fenced ::: callouts etc.)
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+    - linkify
+    - substitution
+    - tasklist
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:

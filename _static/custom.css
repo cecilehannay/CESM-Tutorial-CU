@@ -1,10 +1,133 @@
-/* Tint the whole page for exercise/homework pages, added by custom.js */
-article.bd-article.is-exercise-page {
-  background-color: #fdf3d9;
-  border-radius: 10px;
-  padding: 1.25em 1.75em;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap");
+
+/* ---------- Typography ---------- */
+html {
+  --pst-font-family-base: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --pst-font-family-heading: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --pst-font-family-monospace: "Source Code Pro", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --pst-font-size-base: 1.05rem;
 }
 
-html[data-theme="dark"] article.bd-article.is-exercise-page {
-  background-color: #3a3220;
+/* CESM-ish blue as the accent color (links, active nav, primary buttons) */
+html[data-theme="light"] {
+  --pst-color-primary: #2a6fb5;
+  --pst-color-primary-text: #2a6fb5;
+  --tutorial-accent: #2a6fb5;
+  --tutorial-accent-soft: #e8f0fa;
+  --tutorial-solution: #2e8b57;
+  --tutorial-solution-soft: #e9f6ee;
+  --tutorial-table-head: #e8f0fa;
+  --tutorial-table-stripe: rgba(0, 0, 0, 0.025);
+  --tutorial-exercise-page: #fdf6e3;
+}
+html[data-theme="dark"] {
+  --pst-color-primary: #6ea8e0;
+  --pst-color-primary-text: #6ea8e0;
+  --tutorial-accent: #6ea8e0;
+  --tutorial-accent-soft: #1e2b3a;
+  --tutorial-solution: #5fc38c;
+  --tutorial-solution-soft: #1b2e24;
+  --tutorial-table-head: #1e2b3a;
+  --tutorial-table-stripe: rgba(255, 255, 255, 0.04);
+  --tutorial-exercise-page: #332d1f;
+}
+
+article.bd-article {
+  line-height: 1.6;
+}
+article.bd-article p,
+article.bd-article li {
+  max-width: 48rem;
+}
+
+article.bd-article h1 {
+  font-weight: 700;
+  color: var(--tutorial-accent);
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+article.bd-article h2 {
+  font-weight: 600;
+  margin-top: 2.2rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--pst-color-border);
+}
+article.bd-article h3 {
+  font-weight: 600;
+  margin-top: 1.6rem;
+}
+
+/* ---------- Code ---------- */
+article.bd-article code.literal {
+  font-size: 0.92em;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+article.bd-article div.highlight pre {
+  border-radius: 8px;
+  line-height: 1.45;
+  font-size: 0.92em;
+}
+
+/* ---------- Tables ---------- */
+article.bd-article table {
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem 0;
+  font-size: 0.96em;
+}
+article.bd-article table thead th {
+  background-color: var(--tutorial-table-head);
+  font-weight: 600;
+  text-align: left;
+}
+article.bd-article table th,
+article.bd-article table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--pst-color-border);
+  vertical-align: top;
+}
+article.bd-article table tbody tr:nth-child(even) {
+  background-color: var(--tutorial-table-stripe);
+}
+
+/* ---------- Callouts ---------- */
+article.bd-article .admonition {
+  border-radius: 8px;
+  margin: 1.25rem 0;
+}
+article.bd-article .admonition > .admonition-title {
+  font-weight: 600;
+}
+
+/* Exercise statement */
+article.bd-article .admonition.exercise {
+  border-left: 5px solid var(--tutorial-accent);
+  background-color: var(--tutorial-accent-soft);
+}
+article.bd-article .admonition.exercise > .admonition-title {
+  background-color: var(--tutorial-accent);
+  color: #fff;
+}
+article.bd-article .admonition.exercise > .admonition-title::after {
+  color: #fff;
+}
+
+/* Solution (collapsible) */
+article.bd-article .admonition.solution {
+  border-left: 5px solid var(--tutorial-solution);
+  background-color: var(--tutorial-solution-soft);
+}
+article.bd-article .admonition.solution > .admonition-title {
+  background-color: var(--tutorial-solution);
+  color: #fff;
+}
+article.bd-article .admonition.solution > .admonition-title::after {
+  color: #fff;
+}
+
+/* ---------- Exercise / homework pages (class added by custom.js) ---------- */
+article.bd-article.is-exercise-page {
+  background-color: var(--tutorial-exercise-page);
+  border-radius: 10px;
+  padding: 1.25em 1.75em;
 }

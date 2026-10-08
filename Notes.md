@@ -80,10 +80,41 @@ look at output, and the "why use CESM" aside). Modeled on
   throws a Sphinx lexer warning at build time — easy to miss by eye, easy to confirm via the
   build warning).
 
-## Open items / things mentioned but not yet done
+## October 2026 "improve overall" pass (less repetition, consistent format, undergrad level)
 
-- `unix.ipynb` prerequisites page exists and is linked in; `title.ipynb` for Prerequisites
-  also promises brief intros/links for a text editor and Jupyter notebooks specifically —
-  no pages for those two yet.
-- Possible further length/clarity passes on other concept-heavy pages (xml_files,
-  namelist_overview) if the same "duplicate tables" pattern shows up there too.
+- **Style guide lives in `STYLE.md`** (voice, one H1 per page, sentence-case headings, the
+  only allowed callouts). Follow it for every edit. In short, callouts are MyST colon fences:
+  `:::{admonition} Exercise N: ...` + `:class: exercise`, `Hints` with `:class: hint dropdown`,
+  `Solution` with `:class: solution dropdown`, plus `:::{note}` / `{tip}` / `{important}` /
+  `{warning}`. No `<div class="alert">`, `<details>`, `<font>`, inline `style=`, or
+  `> **Important:**` blockquotes anywhere. `:class:` values are space-separated.
+- Colon fences need `parse: myst_enable_extensions: [colon_fence, ...]` in `_config.yml`
+  (set explicitly). `only_build_toc_files: true` keeps `Notes.md`/`STYLE.md` out of the site.
+- **`tools/lint_notebooks.py`** — run before building: strips empty code cells (they render
+  as blank boxes), flags forbidden markup, multiple H1s, comma-separated `:class:`,
+  unbalanced `:::` fences, broken relative links and missing images. Exit code 1 on problems.
+- **Look and feel** is all in `_static/custom.css` (+ `custom.js`): Google fonts (Source
+  Sans 3 body/headings, Source Code Pro code) via `@import`; CESM-blue accent through the
+  theme's `--pst-color-primary`; blue H1s; striped tables with shaded header row; exercise
+  callouts (blue) and solution callouts (green); exercise/homework pages tinted amber (class
+  added by `custom.js` from the URL containing "exercise"/"homework"). Dark-mode values exist
+  but are unverified.
+- What got deduplicated: chapter 4 had three stacked drafts of the workflow page and two of
+  Exercise 1 (kept Cécile's newest, folded in the `qstat`/log/archive checks); `3.2` had two
+  "where are we" sections; `1.2` had two `less`/`more` sections and two formats; the
+  project-code fallback was explained in four places and now lives only in `9.2` (others
+  link). Chapters 5–7, 9–10 were rewritten in the undergrad voice; 1–4 kept Cécile's wording.
+- Session-2 exercises (6.2, 6.4) use the homework case `b1850_hw`, with a one-line fallback
+  to `case01` from Exercise 2.
+
+## Open items / things to confirm with Cécile
+
+- `5.4_homework.ipynb` still says "Send the list of commands you used to both Aneesh and
+  Cecile on Slack" — course staff names may need updating each year.
+- Instructor fallback paths for students whose runs didn't finish:
+  `/glade/u/home/tliefer/cases/case01` (6.2) and
+  `/glade/derecho/scratch/amiller/archive/case01/atm/hist` (6.4). The scratch one is almost
+  certainly purged by now; both are kept verbatim pending her say-so.
+- Dark-mode colours in `custom.css` are best-effort, never viewed in a browser.
+- The solution for Exercise 5 states the B1850 default `co2vmr` is about `284.7e-6`
+  (doubled `569.4e-6`) — worth a one-time check against a real `CaseDocs/atm_in`.
