@@ -1,0 +1,10 @@
+/* Tint the whole page for exercise/homework pages, added by custom.js */
+article.bd-article.is-exercise-page {
+  background-color: #fdf3d9;
+  border-radius: 10px;
+  padding: 1.25em 1.75em;
+}
+
+html[data-theme="dark"] article.bd-article.is-exercise-page {
+  background-color: #3a3220;
+}
