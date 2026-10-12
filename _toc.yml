@@ -38,7 +38,7 @@ parts:
 
   - file: notebooks/06.Output/title.ipynb
     sections:
-    - file: notebooks/06.Output/6.1_output_overview.ipynb
+    - file: notebooks/06.Output/6.1_timing_files.ipynb
     - file: notebooks/06.Output/6.2_exercise3_timing.ipynb
     - file: notebooks/06.Output/6.3_log_and_history_files.ipynb
     - file: notebooks/06.Output/6.4_exercise4_output.ipynb
