@@ -121,8 +121,6 @@ look at output, and the "why use CESM" aside). Modeled on
   "CLM" underline inside the create_newcase-arguments figure is part of an embedded picture
   in the slide itself and was patched pixel-wise. If she re-exports from PowerPoint, turn
   off "check spelling as you type" first.
-- `images/04.cesm_directories_workflow.png` is no longer referenced (replaced by
-  `04.cesm_after_run_complete.png`) and can be deleted.
 
 ## Open items / things to confirm with Cécile
 
