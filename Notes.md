@@ -58,7 +58,9 @@ look at output, and the "why use CESM" aside). Modeled on
 - The "Overview of CESM directories" diagrams (`images/cesm_directories_*.png`) were rendered
   from the original pptx slides, not hand-drawn: downloaded a portable LibreOffice (RPM
   tarball, extracted with `rpm2cpio`/`cpio`, no root/module needed — nothing installed
-  system-wide, would need re-downloading to scratch if more slides need rendering later),
+  system-wide; re-downloaded 12 Oct 2026 to `/glade/derecho/scratch/hannay/lo/` —
+  `install/opt/libreoffice26.8/program/soffice`, deck PDF and 300-dpi slide PNGs under
+  `render/`; scratch gets purged, so expect to redo this),
   converted the deck to PDF headless, rasterized specific pages with `pdftoppm`, and either
   cropped or (for slides where content overlapped the banner) pixel-diffed against a clean
   slide to mask out just the "Community Earth System Model Tutorial" footer banner.
@@ -106,6 +108,21 @@ look at output, and the "why use CESM" aside). Modeled on
   link). Chapters 5–7, 9–10 were rewritten in the undergrad voice; 1–4 kept Cécile's wording.
 - Session-2 exercises (6.2, 6.4) use the homework case `b1850_hw`, with a one-line fallback
   to `case01` from Exercise 2.
+
+## Chapter 4 split (12 Oct 2026)
+
+- `4.1_four_commands` grew to eight slide figures once Cécile added the before/after
+  directory diagrams, so the job-following and "did it work" material moved to a new
+  `4.2_did_it_work.ipynb`; compsets/grids and Exercise 1 became `4.3` / `4.4`. Cross-links
+  in 2.2, 5.3, 9.1, 11.4 were retargeted (the CaseStatus/log-check links now point at 4.2).
+- Cécile's screenshots of slides 17, 19–24, 26 carried PowerPoint's red spell-check
+  squiggles. They were re-rendered from `Tutorial-CESM-CU-2026.pptx` with the LibreOffice
+  pipeline above (banner cropped at row 2085 of 2250, downscaled to ~2300 px wide). The
+  "CLM" underline inside the create_newcase-arguments figure is part of an embedded picture
+  in the slide itself and was patched pixel-wise. If she re-exports from PowerPoint, turn
+  off "check spelling as you type" first.
+- `images/04.cesm_directories_workflow.png` is no longer referenced (replaced by
+  `04.cesm_after_run_complete.png`) and can be deleted.
 
 ## Open items / things to confirm with Cécile
 

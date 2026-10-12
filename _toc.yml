@@ -25,8 +25,9 @@ parts:
   - file: notebooks/04.CESM-Workflow-Quickstart/title.ipynb
     sections:
     - file: notebooks/04.CESM-Workflow-Quickstart/4.1_four_commands.ipynb
-    - file: notebooks/04.CESM-Workflow-Quickstart/4.2_compsets_and_grids.ipynb
-    - file: notebooks/04.CESM-Workflow-Quickstart/4.3_exercise1.ipynb
+    - file: notebooks/04.CESM-Workflow-Quickstart/4.2_did_it_work.ipynb
+    - file: notebooks/04.CESM-Workflow-Quickstart/4.3_compsets_and_grids.ipynb
+    - file: notebooks/04.CESM-Workflow-Quickstart/4.4_exercise1.ipynb
 
   - file: notebooks/05.Run-length/title.ipynb
     sections:
