@@ -115,12 +115,10 @@ look at output, and the "why use CESM" aside). Modeled on
   directory diagrams, so the job-following and "did it work" material moved to a new
   `4.2_did_it_work.ipynb`; compsets/grids and Exercise 1 became `4.3` / `4.4`. Cross-links
   in 2.2, 5.3, 9.1, 11.4 were retargeted (the CaseStatus/log-check links now point at 4.2).
-- Cécile's screenshots of slides 17, 19–24, 26 carried PowerPoint's red spell-check
-  squiggles. They were re-rendered from `Tutorial-CESM-CU-2026.pptx` with the LibreOffice
-  pipeline above (banner cropped at row 2085 of 2250, downscaled to ~2300 px wide). The
-  "CLM" underline inside the create_newcase-arguments figure is part of an embedded picture
-  in the slide itself and was patched pixel-wise. If she re-exports from PowerPoint, turn
-  off "check spelling as you type" first.
+- Cécile's screenshots of slides 17, 19–24, 26 carry PowerPoint's red spell-check squiggles.
+  A LibreOffice re-render was tried (12 Oct 2026) but she rejected the result ("screwed up")
+  and her originals were restored. Do not redo this; if she wants clean figures, she will
+  re-export from PowerPoint with "check spelling as you type" turned off.
 
 ## Open items / things to confirm with Cécile
 
