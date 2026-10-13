@@ -72,6 +72,5 @@ parts:
   chapters:
   - file: notebooks/11.Additional-Materials/title.ipynb
     sections:
-    - file: notebooks/11.Additional-Materials/11.1_quick_plot.ipynb
-    - file: notebooks/11.Additional-Materials/11.2_more_exercises.ipynb
-    - file: notebooks/11.Additional-Materials/11.3_glossary.ipynb
+    - file: notebooks/11.Additional-Materials/11.1_more_exercises.ipynb
+    - file: notebooks/11.Additional-Materials/11.2_glossary.ipynb
