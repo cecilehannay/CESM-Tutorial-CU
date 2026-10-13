@@ -54,7 +54,9 @@ look at output, and the "why use CESM" aside). Modeled on
   covers it).
 - Two files physically live in a different chapter folder than their topic name suggests,
   because they were moved into Additional Materials by TOC position:
-  `11.Additional-Materials/11.1_why_cesm.ipynb` and `.../11.3_more_exercises.ipynb`.
+  `11.Additional-Materials/11.2_more_exercises.ipynb`. The "Why CESM" page is its own
+  caption-less part `00.Why-CESM/why_cesm.ipynb` between the README and the Tutorial part
+  (moved there 12 Oct 2026 at Cécile's request).
 - The "Overview of CESM directories" diagrams (`images/cesm_directories_*.png`) were rendered
   from the original pptx slides, not hand-drawn: downloaded a portable LibreOffice (RPM
   tarball, extracted with `rpm2cpio`/`cpio`, no root/module needed — nothing installed
