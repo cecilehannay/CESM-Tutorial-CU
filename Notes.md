@@ -126,10 +126,10 @@ look at output, and the "why use CESM" aside). Modeled on
 
 - `5.4_homework.ipynb` still says "Send the list of commands you used to both Aneesh and
   Cecile on Slack" — course staff names may need updating each year.
-- Instructor fallback paths for students whose runs didn't finish:
-  `/glade/u/home/tliefer/cases/case01` (6.2) and
-  `/glade/derecho/scratch/amiller/archive/case01/atm/hist` (6.4). The scratch one is almost
-  certainly purged by now; both are kept verbatim pending her say-so.
+- Instructor fallback paths for students whose runs didn't finish now point at Cécile's own
+  cases (`/glade/u/home/hannay/cases/case01` in 6.2,
+  `/glade/derecho/scratch/hannay/archive/b1850_hw/atm/hist` in 6.4), as in the Oct 14 2026
+  deck. The scratch one will be purged eventually.
 - Dark-mode colours in `custom.css` are best-effort, never viewed in a browser.
 - The solution for Exercise 5 states the B1850 default `co2vmr` is about `284.7e-6`
   (doubled `569.4e-6`) — worth a one-time check against a real `CaseDocs/atm_in`.
